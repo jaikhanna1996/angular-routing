@@ -1,0 +1,29 @@
+<div class="course-container">
+    <!-- <div class="image">
+        <img src="" alt="">
+    </div> -->
+    <div>
+        <h1 style="text-align: center;" *ngIf="!editMode">{{course.name}}</h1>
+        <div *ngIf="editMode">
+            <input type="text" [(ngModel)]="course.name" style="text-align: center;">
+        </div>
+    </div>
+    <div class="course-details">
+        <div style="margin: 0px 10px;"> <b>Author</b>{{course.author}}</div>
+        <div style="margin: 0px 10px;"> <b>Duration</b>{{course.duration}}</div>
+        <div style="margin: 0px 10px;"> <b>ID</b>{{course.id}}</div>
+    </div>
+    <!-- <button [routerLink]="['/Courses/Course', course.id]" [queryParams]="{edit: true}">Edit</button>   passing queryParams -->
+    <button (click)="appendQueryParam()">EDIT</button>          <!-- passing queryParam programatically -->
+    <button (click)="editMode=false" [routerLink]="['/Courses/Course', course.id]">UPDATE</button>
+</div>
+
+<!-- <button routerLink="/Courses/Course/101">GO TO FIRST COURSE</button> -->
+
+<!-- <div>
+    <button [routerLink]="['/Courses/Course', course.id]" [queryParams]="{edit: true}">EDIT</button>  //we can do this programatically
+</div> -->
+
+<!-- <div>
+    <button (click)="appendQueryParam()" >EDIT</button>
+</div> -->

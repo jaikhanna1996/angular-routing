@@ -1,0 +1,8 @@
+<div class="course-container">
+    <div class="container" *ngFor="let course of courses">
+        <h1>Course ID = {{course.id}}</h1>
+        <h2>Name =  {{course.name}}</h2>
+        <h3>Author = {{course.author}}</h3>
+        <button routerLink="/Courses/Course/{{course.id}}">SHOW DETAILS</button>
+    </div>
+</div>
